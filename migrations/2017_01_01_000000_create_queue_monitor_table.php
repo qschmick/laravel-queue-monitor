@@ -13,6 +13,8 @@ class CreateQueueMonitorTable extends Migration
     public function up()
     {
         Schema::create('queue_monitor', function (Blueprint $table) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
             $table->increments('id');
             $table->string('job_id')->index();
             $table->string('name')->nullable();
